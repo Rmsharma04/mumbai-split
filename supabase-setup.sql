@@ -7,13 +7,13 @@ create table if not exists public.ms_expenses (
   kind text not null default 'expense' check (kind in ('expense', 'settle')),
   note text not null default 'Expense' check (char_length(note) <= 60),
   amount numeric(12,2) not null check (amount > 0 and amount < 10000000),
-  payer smallint not null check (payer between 0 and 2),
-  split boolean[] not null check (array_length(split, 1) = 3)
+  payer smallint not null check (payer between 0 and 4),
+  split boolean[] not null check (array_length(split, 1) between 1 and 5)
 );
 
 create table if not exists public.ms_settings (
   id int primary key default 1 check (id = 1),
-  names text[] not null default array['Schoolboy', 'Bathroom guy', 'Andekha'],
+  names text[] not null default array['Schoolboy', 'Bathroom guy', 'Andekha', 'Aayush', 'Stuti'],
   budget numeric(12,2) not null default 0 check (budget >= 0 and budget < 100000000)
 );
 insert into public.ms_settings (id) values (1) on conflict (id) do nothing;

@@ -1,7 +1,7 @@
 {
   "name": "Mumbai Split",
   "short_name": "Mumbai Split",
-  "description": "Split Mumbai trip expenses between the 3 of us.",
+  "description": "Split Mumbai trip expenses between the 5 of us.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
